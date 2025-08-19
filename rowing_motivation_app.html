@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rowing Motivation Tips</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .language-selector {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 8px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .lang-btn.active {
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            color: #1e3c72;
+            font-weight: 600;
+        }
+
+        .header {
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+
+        .tip-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .tip-text {
+            font-size: 1.3em;
+            line-height: 1.6;
+            font-weight: 300;
+            text-align: center;
+        }
+
+        .get-tip-btn {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        .get-tip-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+            background: linear-gradient(45deg, #ff5252, #e53935);
+        }
+
+        .get-tip-btn:active {
+            transform: translateY(0);
+        }
+
+        .rowing-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+            opacity: 0.7;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        /* Hindi font support */
+        .hindi {
+            font-family: 'Noto Sans Devanagari', 'Arial Unicode MS', Arial, sans-serif;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            .language-selector {
+                position: relative;
+                top: auto;
+                right: auto;
+                margin-bottom: 20px;
+                justify-content: center;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .tip-text {
+                font-size: 1.1em;
+            }
+            
+            .get-tip-btn {
+                padding: 12px 25px;
+                font-size: 1em;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="language-selector">
+        <button class="lang-btn" onclick="changeLanguage('en')" id="btn-en">English</button>
+        <button class="lang-btn" onclick="changeLanguage('pt')" id="btn-pt">Português</button>
+        <button class="lang-btn" onclick="changeLanguage('hi')" id="btn-hi">हिन्दी</button>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <div class="rowing-icon">🚣‍♀️</div>
+            <h1 id="mainTitle">Rowing Motivation</h1>
+            <p class="subtitle" id="subtitle">Fuel your passion for the water</p>
+        </div>
+        
+        <div class="tip-container">
+            <p class="tip-text" id="tipText">Click below to get your daily dose of rowing motivation!</p>
+        </div>
+        
+        <button class="get-tip-btn" id="getTipBtn" onclick="getRandomTip()">Get New Tip</button>
+    </div>
+
+    <script>
+        const translations = {
+            en: {
+                mainTitle: "Rowing Motivation",
+                subtitle: "Fuel your passion for the water",
+                getTipBtn: "Get New Tip",
+                initialMessage: "Click below to get your daily dose of rowing motivation!",
+                tips: [
+                    "Every stroke is a step closer to your goal. Keep pushing through!",
+                    "The pain you feel today will be the strength you feel tomorrow.",
+                    "Champions aren't made in comfort zones. Embrace the challenge!",
+                    "Your only competition is who you were yesterday.",
+                    "The water doesn't care about your excuses. Show up and row!",
+                    "Technique beats strength every time. Focus on perfect form.",
+                    "Mental toughness is built one stroke at a time.",
+                    "The boat moves when the crew moves as one. Trust your teammates.",
+                    "Every champion was once a beginner who refused to give up.",
+                    "The early morning rows are what separate good from great.",
+                    "Feel the rhythm, find your flow, and let the boat fly.",
+                    "Your limits are only as real as you believe them to be.",
+                    "Consistency in training creates confidence in racing.",
+                    "The hardest part is getting in the boat. Everything else is just rowing.",
+                    "Power without control is wasted energy. Master both.",
+                    "The finish line is just the beginning of your next challenge.",
+                    "Every stroke counts, every breath matters, every moment is an opportunity.",
+                    "Train like you've never won, race like you've never lost.",
+                    "The water teaches patience, persistence, and the power of flow.",
+                    "Your stroke rate is your heartbeat. Keep it steady, keep it strong.",
+                    "Rowing is meditation in motion. Find your zen on the water.",
+                    "The catch is everything - make it clean, make it count.",
+                    "Drive through the water like your dreams depend on it.",
+                    "Perfect practice makes perfect performance.",
+                    "The boat responds to commitment, not just effort."
+                ]
+            },
+            pt: {
+                mainTitle: "Motivação para Remo",
+                subtitle: "Alimente sua paixão pela água",
+                getTipBtn: "Nova Dica",
+                initialMessage: "Clique abaixo para receber sua dose diária de motivação para o remo!",
+                tips: [
+                    "Cada remada é um passo mais perto do seu objetivo. Continue lutando!",
+                    "A dor que você sente hoje será a força que sentirá amanhã.",
+                    "Campeões não são feitos em zonas de conforto. Aceite o desafio!",
+                    "Sua única competição é quem você era ontem.",
+                    "A água não se importa com suas desculpas. Apareça e reme!",
+                    "Técnica vence força sempre. Foque na forma perfeita.",
+                    "Resistência mental é construída uma remada por vez.",
+                    "O barco se move quando a equipe se move como uma só. Confie nos seus companheiros.",
+                    "Todo campeão já foi um iniciante que se recusou a desistir.",
+                    "Os treinos matinais separam o bom do excelente.",
+                    "Sinta o ritmo, encontre seu fluxo e deixe o barco voar.",
+                    "Seus limites são tão reais quanto você acredita que sejam.",
+                    "Consistência no treino cria confiança na corrida.",
+                    "A parte mais difícil é entrar no barco. Todo o resto é só remar.",
+                    "Poder sem controle é energia desperdiçada. Domine ambos.",
+                    "A linha de chegada é apenas o começo do seu próximo desafio.",
+                    "Cada remada conta, cada respiração importa, cada momento é uma oportunidade.",
+                    "Treine como se nunca tivesse vencido, compita como se nunca tivesse perdido.",
+                    "A água ensina paciência, persistência e o poder do fluxo.",
+                    "Sua cadência é seu batimento cardíaco. Mantenha-a firme e forte.",
+                    "Remo é meditação em movimento. Encontre seu zen na água.",
+                    "A pegada é tudo - faça-a limpa, faça-a contar.",
+                    "Impulsione através da água como se seus sonhos dependessem disso.",
+                    "Prática perfeita faz performance perfeita.",
+                    "O barco responde ao comprometimento, não apenas ao esforço."
+                ]
+            },
+            hi: {
+                mainTitle: "नौकायन प्रेरणा",
+                subtitle: "पानी के लिए अपने जुनून को बढ़ाएं",
+                getTipBtn: "नया टिप",
+                initialMessage: "नौकायन की दैनिक प्रेरणा पाने के लिए नीचे क्लिक करें!",
+                tips: [
+                    "हर स्ट्रोक आपके लक्ष्य के एक कदम करीब है। आगे बढ़ते रहें!",
+                    "आज आप जो दर्द महसूस करते हैं, वह कल की शक्ति बनेगा।",
+                    "चैंपियन आराम के क्षेत्र में नहीं बनते। चुनौती को अपनाएं!",
+                    "आपकी एकमात्र प्रतिस्पर्धा वह है जो आप कल थे।",
+                    "पानी आपके बहाने की परवाह नहीं करता। आएं और नौकायन करें!",
+                    "तकनीक हमेशा शक्ति पर जीत जाती है। परफेक्ट फॉर्म पर ध्यान दें।",
+                    "मानसिक मजबूती एक-एक स्ट्रोक से बनती है।",
+                    "नाव तभी चलती है जब टीम एक साथ चले। अपनी टीम पर भरोसा करें।",
+                    "हर चैंपियन कभी एक शुरुआती था जिसने हार मानने से इनकार किया।",
+                    "सुबह की ट्रेनिंग अच्छे और महान के बीच अंतर बनाती है।",
+                    "लय महसूस करें, अपना प्रवाह खोजें, और नाव को उड़ने दें।",
+                    "आपकी सीमाएं केवल उतनी वास्तविक हैं जितनी आप मानते हैं।",
+                    "प्रशिक्षण में स्थिरता दौड़ में आत्मविश्वास पैदा करती है।",
+                    "सबसे कठिन हिस्सा नाव में बैठना है। बाकी सब बस नौकायन है।",
+                    "नियंत्रण के बिना शक्ति व्यर्थ ऊर्जा है। दोनों में महारत हासिल करें।",
+                    "फिनिश लाइन आपकी अगली चुनौती की शुरुआत है।",
+                    "हर स्ट्रोक मायने रखता है, हर सांस महत्वपूर्ण है, हर पल एक अवसर है।",
+                    "ऐसे प्रशिक्षण करें जैसे कभी जीते नहीं, ऐसे दौड़ें जैसे कभी हारे नहीं।",
+                    "पानी धैर्य, दृढ़ता और प्रवाह की शक्ति सिखाता है।",
+                    "आपकी स्ट्रोक दर आपकी दिल की धड़कन है। इसे स्थिर और मजबूत रखें।",
+                    "नौकायन गति में ध्यान है। पानी पर अपना जेन खोजें।",
+                    "कैच ही सब कुछ है - इसे साफ बनाएं, इसे गिनती में लाएं।",
+                    "पानी के माध्यम से ऐसे आगे बढ़ें जैसे आपके सपने इस पर निर्भर हों।",
+                    "परफेक्ट अभ्यास परफेक्ट प्रदर्शन बनाता है।",
+                    "नाव प्रतिबद्धता का जवाब देती है, केवल प्रयास का नहीं।"
+                ]
+            }
+        };
+
+        let currentLang = 'en';
+
+        function detectBrowserLanguage() {
+            const browserLang = navigator.language || navigator.languages[0];
+            
+            if (browserLang.startsWith('pt')) {
+                return 'pt';
+            } else if (browserLang.startsWith('hi')) {
+                return 'hi';
+            } else {
+                return 'en';
+            }
+        }
+
+        function changeLanguage(lang) {
+            currentLang = lang;
+            
+            // Update active button
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`btn-${lang}`).classList.add('active');
+            
+            // Update text content
+            const translation = translations[lang];
+            document.getElementById('mainTitle').textContent = translation.mainTitle;
+            document.getElementById('subtitle').textContent = translation.subtitle;
+            document.getElementById('getTipBtn').textContent = translation.getTipBtn;
+            document.getElementById('tipText').textContent = translation.initialMessage;
+            
+            // Add Hindi font class if needed
+            if (lang === 'hi') {
+                document.body.classList.add('hindi');
+            } else {
+                document.body.classList.remove('hindi');
+            }
+            
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+            
+            // Save language preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        function getRandomTip() {
+            const tipElement = document.getElementById('tipText');
+            const tips = translations[currentLang].tips;
+            const randomIndex = Math.floor(Math.random() * tips.length);
+            const newTip = tips[randomIndex];
+            
+            // Add fade effect
+            tipElement.classList.remove('fade-in');
+            
+            setTimeout(() => {
+                tipElement.textContent = newTip;
+                tipElement.classList.add('fade-in');
+            }, 100);
+        }
+
+        // Initialize app
+        window.addEventListener('load', () => {
+            // Try to get saved language preference, otherwise detect browser language
+            const savedLang = localStorage.getItem('preferredLanguage');
+            const initialLang = savedLang || detectBrowserLanguage();
+            
+            changeLanguage(initialLang);
+            
+            // Get initial tip after language is set
+            setTimeout(getRandomTip, 500);
+        });
+    </script>
+</body>
+</html>
