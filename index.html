@@ -149,22 +149,24 @@
             animation: fadeIn 0.5s ease-out;
         }
 
-        /* Hindi font support */
-        .hindi {
-            font-family: 'Noto Sans Devanagari', 'Arial Unicode MS', Arial, sans-serif;
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 30px 20px;
-            }
-            
+        @media (max-width: 768px) {
             .language-selector {
                 position: relative;
                 top: auto;
                 right: auto;
                 margin-bottom: 20px;
                 justify-content: center;
+            }
+            
+            .lang-btn {
+                padding: 6px 10px;
+                font-size: 0.8em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
             }
             
             h1 {
@@ -181,13 +183,13 @@
             }
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="language-selector">
         <button class="lang-btn" onclick="changeLanguage('en')" id="btn-en">English</button>
         <button class="lang-btn" onclick="changeLanguage('pt')" id="btn-pt">Português</button>
-        <button class="lang-btn" onclick="changeLanguage('hi')" id="btn-hi">हिन्दी</button>
+        <button class="lang-btn" onclick="changeLanguage('es')" id="btn-es">Español</button>
+        <button class="lang-btn" onclick="changeLanguage('fr')" id="btn-fr">Français</button>
     </div>
 
     <div class="container">
@@ -236,7 +238,17 @@
                     "The catch is everything - make it clean, make it count.",
                     "Drive through the water like your dreams depend on it.",
                     "Perfect practice makes perfect performance.",
-                    "The boat responds to commitment, not just effort."
+                    "The boat responds to commitment, not just effort.",
+                    "When the going gets tough, the tough keep rowing.",
+                    "Your oar is your paintbrush, the water is your canvas.",
+                    "Synchronization beats individual strength every time.",
+                    "The river doesn't make exceptions. Neither should you.",
+                    "Each stroke is a promise to yourself - keep your word.",
+                    "Champions are forged in the fire of early morning training.",
+                    "The boat knows when you're giving everything. Give everything.",
+                    "Your technique today determines your speed tomorrow.",
+                    "Trust the process, respect the water, believe in yourself.",
+                    "Excellence is not a skill, it's an attitude on every stroke."
                 ]
             },
             pt: {
@@ -269,40 +281,103 @@
                     "A pegada é tudo - faça-a limpa, faça-a contar.",
                     "Impulsione através da água como se seus sonhos dependessem disso.",
                     "Prática perfeita faz performance perfeita.",
-                    "O barco responde ao comprometimento, não apenas ao esforço."
+                    "O barco responde ao comprometimento, não apenas ao esforço.",
+                    "Quando a situação fica difícil, os fortes continuam remando.",
+                    "Seu remo é seu pincel, a água é sua tela.",
+                    "Sincronização vence força individual sempre.",
+                    "O rio não faz exceções. Você também não deveria.",
+                    "Cada remada é uma promessa para si mesmo - cumpra sua palavra.",
+                    "Campeões são forjados no fogo dos treinos matinais.",
+                    "O barco sabe quando você está dando tudo. Dê tudo.",
+                    "Sua técnica hoje determina sua velocidade amanhã.",
+                    "Confie no processo, respeite a água, acredite em si mesmo.",
+                    "Excelência não é uma habilidade, é uma atitude em cada remada."
                 ]
             },
-            hi: {
-                mainTitle: "नौकायन प्रेरणा",
-                subtitle: "पानी के लिए अपने जुनून को बढ़ाएं",
-                getTipBtn: "नया टिप",
-                initialMessage: "नौकायन की दैनिक प्रेरणा पाने के लिए नीचे क्लिक करें!",
+            es: {
+                mainTitle: "Motivación para Remo",
+                subtitle: "Alimenta tu pasión por el agua",
+                getTipBtn: "Nuevo Consejo",
+                initialMessage: "¡Haz clic abajo para obtener tu dosis diaria de motivación para el remo!",
                 tips: [
-                    "हर स्ट्रोक आपके लक्ष्य के एक कदम करीब है। आगे बढ़ते रहें!",
-                    "आज आप जो दर्द महसूस करते हैं, वह कल की शक्ति बनेगा।",
-                    "चैंपियन आराम के क्षेत्र में नहीं बनते। चुनौती को अपनाएं!",
-                    "आपकी एकमात्र प्रतिस्पर्धा वह है जो आप कल थे।",
-                    "पानी आपके बहाने की परवाह नहीं करता। आएं और नौकायन करें!",
-                    "तकनीक हमेशा शक्ति पर जीत जाती है। परफेक्ट फॉर्म पर ध्यान दें।",
-                    "मानसिक मजबूती एक-एक स्ट्रोक से बनती है।",
-                    "नाव तभी चलती है जब टीम एक साथ चले। अपनी टीम पर भरोसा करें।",
-                    "हर चैंपियन कभी एक शुरुआती था जिसने हार मानने से इनकार किया।",
-                    "सुबह की ट्रेनिंग अच्छे और महान के बीच अंतर बनाती है।",
-                    "लय महसूस करें, अपना प्रवाह खोजें, और नाव को उड़ने दें।",
-                    "आपकी सीमाएं केवल उतनी वास्तविक हैं जितनी आप मानते हैं।",
-                    "प्रशिक्षण में स्थिरता दौड़ में आत्मविश्वास पैदा करती है।",
-                    "सबसे कठिन हिस्सा नाव में बैठना है। बाकी सब बस नौकायन है।",
-                    "नियंत्रण के बिना शक्ति व्यर्थ ऊर्जा है। दोनों में महारत हासिल करें।",
-                    "फिनिश लाइन आपकी अगली चुनौती की शुरुआत है।",
-                    "हर स्ट्रोक मायने रखता है, हर सांस महत्वपूर्ण है, हर पल एक अवसर है।",
-                    "ऐसे प्रशिक्षण करें जैसे कभी जीते नहीं, ऐसे दौड़ें जैसे कभी हारे नहीं।",
-                    "पानी धैर्य, दृढ़ता और प्रवाह की शक्ति सिखाता है।",
-                    "आपकी स्ट्रोक दर आपकी दिल की धड़कन है। इसे स्थिर और मजबूत रखें।",
-                    "नौकायन गति में ध्यान है। पानी पर अपना जेन खोजें।",
-                    "कैच ही सब कुछ है - इसे साफ बनाएं, इसे गिनती में लाएं।",
-                    "पानी के माध्यम से ऐसे आगे बढ़ें जैसे आपके सपने इस पर निर्भर हों।",
-                    "परफेक्ट अभ्यास परफेक्ट प्रदर्शन बनाता है।",
-                    "नाव प्रतिबद्धता का जवाब देती है, केवल प्रयास का नहीं।"
+                    "Cada remada es un paso más cerca de tu objetivo. ¡Sigue adelante!",
+                    "El dolor que sientes hoy será la fuerza que sentirás mañana.",
+                    "Los campeones no se forjan en zonas de confort. ¡Acepta el desafío!",
+                    "Tu única competencia es quien eras ayer.",
+                    "Al agua no le importan tus excusas. ¡Preséntate y rema!",
+                    "La técnica siempre vence a la fuerza. Concéntrate en la forma perfecta.",
+                    "La resistencia mental se construye remada a remada.",
+                    "El bote se mueve cuando el equipo se mueve como uno. Confía en tus compañeros.",
+                    "Todo campeón fue una vez un principiante que se negó a rendirse.",
+                    "Los entrenamientos matutinos separan lo bueno de lo excelente.",
+                    "Siente el ritmo, encuentra tu flujo y deja que el bote vuele.",
+                    "Tus límites son tan reales como tú crees que son.",
+                    "La consistencia en el entrenamiento crea confianza en la carrera.",
+                    "La parte más difícil es subirse al bote. Todo lo demás es solo remar.",
+                    "Poder sin control es energía desperdiciada. Domina ambos.",
+                    "La línea de meta es solo el comienzo de tu próximo desafío.",
+                    "Cada remada cuenta, cada respiración importa, cada momento es una oportunidad.",
+                    "Entrena como si nunca hubieras ganado, compite como si nunca hubieras perdido.",
+                    "El agua enseña paciencia, persistencia y el poder del flujo.",
+                    "Tu ritmo de remada es tu latido. Manténlo constante y fuerte.",
+                    "Remar es meditación en movimiento. Encuentra tu zen en el agua.",
+                    "El agarre es todo - hazlo limpio, hazlo contar.",
+                    "Impulsa a través del agua como si tus sueños dependieran de ello.",
+                    "La práctica perfecta hace el rendimiento perfecto.",
+                    "El bote responde al compromiso, no solo al esfuerzo.",
+                    "Cuando las cosas se ponen difíciles, los fuertes siguen remando.",
+                    "Tu remo es tu pincel, el agua es tu lienzo.",
+                    "La sincronización vence a la fuerza individual siempre.",
+                    "El río no hace excepciones. Tú tampoco deberías.",
+                    "Cada remada es una promesa a ti mismo - cumple tu palabra.",
+                    "Los campeones se forjan en el fuego del entrenamiento matutino.",
+                    "El bote sabe cuando estás dando todo. Da todo.",
+                    "Tu técnica hoy determina tu velocidad mañana.",
+                    "Confía en el proceso, respeta el agua, cree en ti mismo.",
+                    "La excelencia no es una habilidad, es una actitud en cada remada."
+                ]
+            },
+            fr: {
+                mainTitle: "Motivation d'Aviron",
+                subtitle: "Alimentez votre passion pour l'eau",
+                getTipBtn: "Nouveau Conseil",
+                initialMessage: "Cliquez ci-dessous pour obtenir votre dose quotidienne de motivation d'aviron!",
+                tips: [
+                    "Chaque coup d'aviron vous rapproche de votre objectif. Continuez!",
+                    "La douleur que vous ressentez aujourd'hui sera la force que vous ressentirez demain.",
+                    "Les champions ne se forment pas dans les zones de confort. Acceptez le défi!",
+                    "Votre seule compétition est qui vous étiez hier.",
+                    "L'eau se moque de vos excuses. Présentez-vous et ramez!",
+                    "La technique bat la force à chaque fois. Concentrez-vous sur la forme parfaite.",
+                    "La résistance mentale se construit coup d'aviron par coup d'aviron.",
+                    "Le bateau avance quand l'équipe bouge comme une seule. Faites confiance à vos coéquipiers.",
+                    "Chaque champion était autrefois un débutant qui a refusé d'abandonner.",
+                    "Les entraînements matinaux séparent le bon de l'excellent.",
+                    "Sentez le rythme, trouvez votre flow et laissez le bateau voler.",
+                    "Vos limites ne sont réelles que si vous y croyez.",
+                    "La consistance à l'entraînement crée la confiance en course.",
+                    "La partie la plus difficile est de monter dans le bateau. Tout le reste n'est que de l'aviron.",
+                    "La puissance sans contrôle est de l'énergie gaspillée. Maîtrisez les deux.",
+                    "La ligne d'arrivée n'est que le début de votre prochain défi.",
+                    "Chaque coup compte, chaque respiration importe, chaque moment est une opportunité.",
+                    "Entraînez-vous comme si vous n'aviez jamais gagné, courez comme si vous n'aviez jamais perdu.",
+                    "L'eau enseigne la patience, la persistance et le pouvoir du flow.",
+                    "Votre cadence est votre battement de cœur. Gardez-la stable et forte.",
+                    "L'aviron est la méditation en mouvement. Trouvez votre zen sur l'eau.",
+                    "La prise est tout - faites-la propre, faites-la compter.",
+                    "Poussez dans l'eau comme si vos rêves en dépendaient.",
+                    "La pratique parfaite fait la performance parfaite.",
+                    "Le bateau répond à l'engagement, pas seulement à l'effort.",
+                    "Quand ça devient dur, les durs continuent de ramer.",
+                    "Votre aviron est votre pinceau, l'eau est votre toile.",
+                    "La synchronisation bat la force individuelle à chaque fois.",
+                    "La rivière ne fait pas d'exceptions. Vous non plus ne devriez pas.",
+                    "Chaque coup est une promesse à vous-même - tenez votre parole.",
+                    "Les champions se forgent dans le feu de l'entraînement matinal.",
+                    "Le bateau sait quand vous donnez tout. Donnez tout.",
+                    "Votre technique aujourd'hui détermine votre vitesse demain.",
+                    "Faites confiance au processus, respectez l'eau, croyez en vous.",
+                    "L'excellence n'est pas une compétence, c'est une attitude à chaque coup."
                 ]
             }
         };
@@ -314,8 +389,10 @@
             
             if (browserLang.startsWith('pt')) {
                 return 'pt';
-            } else if (browserLang.startsWith('hi')) {
-                return 'hi';
+            } else if (browserLang.startsWith('es')) {
+                return 'es';
+            } else if (browserLang.startsWith('fr')) {
+                return 'fr';
             } else {
                 return 'en';
             }
@@ -335,18 +412,8 @@
             document.getElementById('getTipBtn').textContent = translation.getTipBtn;
             document.getElementById('tipText').textContent = translation.initialMessage;
             
-            // Add Hindi font class if needed
-            if (lang === 'hi') {
-                document.body.classList.add('hindi');
-            } else {
-                document.body.classList.remove('hindi');
-            }
-            
             // Update HTML lang attribute
             document.documentElement.lang = lang;
-            
-            // Save language preference
-            localStorage.setItem('preferredLanguage', lang);
         }
 
         function getRandomTip() {
@@ -366,9 +433,8 @@
 
         // Initialize app
         window.addEventListener('load', () => {
-            // Try to get saved language preference, otherwise detect browser language
-            const savedLang = localStorage.getItem('preferredLanguage');
-            const initialLang = savedLang || detectBrowserLanguage();
+            // Detect browser language
+            const initialLang = detectBrowserLanguage();
             
             changeLanguage(initialLang);
             
